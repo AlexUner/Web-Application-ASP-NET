@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Web Application ASP.NET";
+}
+
+<div class="text-center">
+    <h1 class="display-5">This application was created using VS2022</h1>
+    <p>If you would like to see more examples, visit the <a href="https://github.com" target="_blank">knowledge base</a>.</p>
+
+    @{
+        RenderName("Bondarenko Alexandr ");
+    }
+
+    @functions {
+        private void RenderName(string name)
+        {
+            <p align="right" style="align-content:end; display:flex; flex-direction:column;">created by: <strong>@name</strong></p>
+        }
+    }
+
+</div>

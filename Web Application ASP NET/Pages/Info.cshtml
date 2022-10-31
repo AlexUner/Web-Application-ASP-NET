@@ -1,0 +1,97 @@
+﻿@page
+@model Web_Application_ASP_NET.Pages.InfoModel
+@{
+    ViewData["Title"] = "Web Application ASP.NET — Info";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Information about the creator of the page is displayed here</p>
+<hr />
+
+<div class="info-container">
+
+    <div class="info-container__main-info">
+        <h2 class="info-container__dev">@ViewBag.Developer</h2>
+
+        <div>
+            <h3 class="info-container__org">@ViewBag.Organization</h3>
+            <span>@ViewBag.WorkExperience</span>
+        </div>
+        
+    </div>
+
+    <hr />
+
+    <div class="info-container__work-info">
+        <div class="work-info__skills">
+            <h4>Skills:</h4>
+            <ul>
+                @foreach (var skill in ViewBag.Skills)
+                {
+                    <li>@skill</li>
+                }
+            </ul>
+        </div>
+
+        <div class="work-info__contacts">
+            <h4>Contacts:</h4>
+            <ul>
+                @foreach (KeyValuePair<string, string> contact in ViewBag.Contacts)
+                {
+                    <li>
+                        Type: @contact.Key
+                        <br>
+                        <a @switch (@contact.Key)
+                            {
+                                case "Email":
+                                    @Html.Raw($"href=\"mailto:{@contact.Value}\""); 
+                                break;
+
+                                case "Mobile phone":
+                                    @Html.Raw($"href=\"tel:{@contact.Value}\"");
+                                break;
+
+                            } 
+                        >
+                        
+                            <strong>@contact.Value</strong>
+                    
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <div class="img-container">
+        <h2 align="center">Planetarium</h2>
+
+        <div class="planetarium-btn">Press me!</div>
+
+        <p class="intro-text">Select the planet!</p>
+
+        <div class="description hide">
+            <img class="description__img" src="" />
+            <div class="description__name"></div>
+        </div>
+
+        <img class="planetarium-img" src="https://i.pinimg.com/originals/bf/16/60/bf166044d9f7ef394b6e026b9589f95d.jpg" alt="random_img" usemap="#mymap" />
+
+        <map name="mymap">
+            <area target="" alt="Mercury" title="Mercury" coords="92,278,13" shape="circle">
+            <area target="" alt="Venus" title="Venus" coords="122,297,19" shape="circle">
+            <area target="" alt="Earth" title="Earth" coords="184,280,21" shape="circle">
+            <area target="" alt="Mars" title="Mars" coords="220,302,15" shape="circle">
+            <area target="" alt="Jupiter" title="Jupiter" coords="285,253,60" shape="circle">
+            <area target="" alt="Saturn" title="Saturn" coords="380,321,45" shape="circle">
+            <area target="" alt="Uranus" title="Uranus" coords="473,257,31" shape="circle">
+            <area target="" alt="Neptune" title="Neptune" coords="535,325,34" shape="circle">
+            <area target="" alt="Pluto" title="Pluto" coords="616,295,13" shape="circle">
+            <area target="" alt="Sun" title="Sun" coords="-30,284,97" shape="circle">
+        </map>
+    </div>
+
+</div>
+
+

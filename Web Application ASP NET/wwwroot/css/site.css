@@ -1,0 +1,352 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    overflow-y: scroll;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a {
+    color: #0077cc;
+}
+
+a {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+a:hover {
+    background-size: 100% 2px;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+.text-center > h1 {
+    animation: pulse 5s cubic-bezier(0.375, 0.550, 0.675, 0.525) infinite;
+}
+
+.text-center > p {
+    margin-top: 20px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: rotate(0eg) scale(1);
+        text-shadow: 0 0 0px #f7626200;
+        color: black;
+    }
+
+    30% {
+        transform: rotate(3deg) scale(1.1);
+        text-shadow: 0 0 0px #f76262c2;
+        color: black;
+    }
+
+    70% {
+        transform: rotate(-1deg) scale(1.05);
+        text-shadow: 0 0 10px #f762625e;
+        color: #371b1b;
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+        text-shadow: 0 0 0px #f7626200;
+        color: black;
+    }
+}
+
+.info-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-container__main-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+info-container__work-info {
+    width: 100%;
+}
+
+.info-container__work-info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.info-container__work-info > * {
+    width: 50%;
+    margin-left: 10px;
+}
+
+.work-info__skills {
+    border-right: 1.5px solid var(--bs-gray-400);
+    
+}
+
+.work-info__skills > ul > li,
+.work-info__contacts > ul > li {
+    list-style-type: none;
+    position: relative;	
+	margin: 0 0 0 0;
+	padding: 5px 0;
+    cursor: default;
+    width: fit-content;
+}
+
+.work-info__skills > ul > li::before,
+.work-info__contacts > ul > li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #201618;
+    margin: auto;
+    transition: background-color .2s;
+}
+
+.work-info__skills > ul > li:hover::before,
+.work-info__contacts > ul > li:hover::before {
+    background: #c74f4f;
+}
+
+.img-container {
+    align-self: center;
+    position: relative;
+}
+
+.img-container > img {
+    border-radius: 20px;
+    height: 0;
+}
+
+.planetarium-btn {
+    border: 1px solid #201618;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px 0;
+    width: 165px;
+    cursor: pointer;
+    transition: background-color .2s;
+    font-weight: 500;
+    margin: auto;
+}
+
+.planetarium-btn:hover {
+    background: #c74f4f;
+    text-shadow: 0 0 5px #fff;
+}
+
+.planetarium-btn__active {
+    animation: btn__active 0.3s cubic-bezier(0.375, 0.550, 0.675, 0.525);
+    animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    cursor: default;
+    text-shadow: 0 0 5px #fff;
+    overflow: hidden;
+}
+
+@keyframes btn__active {
+    0% {
+        color: black;
+        opacity: 1;
+    }
+
+    10% {
+        color: #c74f4f00;
+        height: 24px;
+        display: block;
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0;
+        height: 0px;
+        display: none;
+    }
+}
+
+.planetarium-img__active {
+    animation: img__active 0.3s cubic-bezier(0.375, 0.550, 0.675, 0.525);
+    animation-iteration-count: 1;
+    animation-delay: 0.3s;
+    -webkit-animation-fill-mode: forwards;
+    cursor: crosshair;
+}
+
+@keyframes img__active {
+    from {
+        height: 1155px;
+        opacity: 0;
+    }
+
+    to {
+        height: 1155px;
+        opacity: 1;
+    }
+}
+
+area {
+    cursor: pointer;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.intro-text {
+    color: #ffffff00;
+    position: absolute;
+    bottom: 30%;
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 50px;
+    font-weight: 500;
+    transition-duration: 0.2s;
+    z-index: -1;
+}
+
+.intro-text__active {
+    animation: text__active 0.3s cubic-bezier(0.375, 0.550, 0.675, 0.525) 0.6s 1 forwards, text__active__rotate 5s ease-in-out 0.7s infinite;
+    cursor: crosshair;
+    text-shadow: 0 0 0 #ffffff00;
+    z-index: 1;
+}
+
+@keyframes text__active {
+    from {
+        color: #ffffff00;
+        text-shadow: 0 0 0 #ffffff00;
+    }
+
+    to {
+        color: #ffffffff;
+        text-shadow: 0 0 5px #ffffffff;
+    }
+}
+
+@keyframes text__active__rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.description {
+    position: absolute;
+    bottom: 30%;
+    height: 250px;
+    width: 200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 1px solid #f5deb3;
+    z-index: 1;
+    background: #f5deb350;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition-duration: 0.2s;
+}
+
+.description__name {
+    font-family: 'Montserrat';
+    color: #b9f378;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    text-shadow: 0 0 2px black;
+}
+
+.description__img {
+    image-rendering: crisp-edges;
+    width: 180px;
+    height: 180px;
+    border-radius: 3px;
+    margin: auto;
+    border: 1px solid #f5deb3;
+}
